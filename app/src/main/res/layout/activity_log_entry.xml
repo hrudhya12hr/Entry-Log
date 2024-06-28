@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Your Name"
+        android:drawableLeft="@drawable/baseline_person_24"
         android:id="@+id/name"/>
     <TextView
         android:layout_width="match_parent"
@@ -23,6 +24,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/AdmsnNo"
         android:inputType="number"
+        android:drawableLeft="@drawable/baseline_123_24"
         android:hint="Enter Your Admsn no"/>
     <TextView
         android:layout_width="match_parent"
@@ -33,6 +35,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/SysNo"
         android:inputType="number"
+        android:drawableLeft="@drawable/baseline_123_24"
         android:hint="Enter Your System no"/>
     <TextView
         android:layout_width="match_parent"
@@ -42,12 +45,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/dept"
+        android:drawableLeft="@drawable/baseline_work_24"
         android:hint="Enter Your Department"/>
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ADD"
-        android:background="#F8C687"
+        android:background="#E7900F"
         android:id="@+id/addbtn"
         android:layout_margin="20px"/>
     <androidx.appcompat.widget.AppCompatButton
@@ -55,7 +59,7 @@
         android:layout_height="wrap_content"
         android:text="LOGOUT"
         android:id="@+id/logoutbtn"
-        android:background="#F8C687"
+        android:background="#E7900F"
         android:layout_margin="20px"/>
 
 

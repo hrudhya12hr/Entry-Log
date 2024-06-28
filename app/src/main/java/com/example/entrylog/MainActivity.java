@@ -1,6 +1,7 @@
 package com.example.entrylog;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -23,6 +24,15 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        SharedPreferences preference=getSharedPreferences("loagapp",MODE_PRIVATE);
+        String username=preference.getString("user",null);
+        if(username!=null)
+        {
+            Intent i = new Intent(getApplicationContext(), LogEntry.class);
+            startActivity(i);
+        }
+
+
         e1=(EditText) findViewById(R.id.uname);
         e2=(EditText) findViewById(R.id.password);
         b1=(AppCompatButton) findViewById(R.id.loginbt);
@@ -35,9 +45,14 @@ public class MainActivity extends AppCompatActivity {
                     String getPassword = e2.getText().toString();
 
                     if (getUsername.equals("Admin") && getPassword.equals("12345")) {
+                        SharedPreferences preference=getSharedPreferences("loagapp",MODE_PRIVATE);
+                        SharedPreferences.Editor editor=preference.edit();
+                        editor.putString("user","Admin");
+                        editor.apply();
                         Intent i = new Intent(getApplicationContext(), LogEntry.class);
                         startActivity(i);
-                    } else {
+                    }
+                    else {
                         Toast.makeText(getApplicationContext(), "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }
                 }
